@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* We can add the directives here
+https://tailwindcss.com/docs/functions-and-directives
+*/
+
+@layer base {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        /* able to use other tailwind definition */
+        @apply text-xl;
+    }
+}
+
+/* can create your own classes or so as well */
+@layer components {
+    .btn-blue {
+        @apply bg-blue-500 py-2 px-4 rounded-xl font-bold text-white hover:bg-blue-700;
+    }
+}
+
+/* custom css class & functions with object in config definition */
+.content-area {
+    @apply bg-green-200;
+    height: theme('spacing.128');
+}
+
+@media screen(xl) {
+    body {
+        @apply bg-black text-white;
+    }
+}
